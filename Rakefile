@@ -302,5 +302,24 @@ def get_stdin(message)
   STDIN.gets.chomp
 end
 
+# Usage: rake clean
+desc "Cleanup generated files"
+task :clean  do
+  system "rm -r _site"
+end # task: clean
+
+# Usage: rake generate
+desc "Generate the site in _site/"
+task :generate do
+  system "jekyll --no-auto --no-server"
+end # task: generate
+
+desc "Generates the documentation as a pdf"
+file 'devguide.pdf' => [:generate] do |task|
+  pages = File.read('_site/toc.html').scan(/<li><a href=['"]([^'"]+)/).flatten.map { |f| "_site/#{f}" }
+  #puts pages
+  sh 'prince', '--input=html', '--no-network', '--log=prince_errors.log', "--output=_site/#{task.name}", '_site/toc.html', *pages
+end # task: pdf
+
 #Load custom rake scripts
 Dir['_rake/*.rake'].each { |r| load r }
