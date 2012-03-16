@@ -315,10 +315,15 @@ task :generate do
 end # task: generate
 
 desc "Generates the documentation as a pdf"
-file 'devguide.pdf' => [:generate] do |task|
-  pages = File.read('_site/toc.html').scan(/<li><a href=['"]([^'"]+)/).flatten.map { |f| "_site/#{f}" }
-  #puts pages
-  sh 'prince', '--input=html', '--no-network', '--log=prince_errors.log', "--output=_site/#{task.name}", '_site/toc.html', *pages
+task :pdf => [:generate, :'ogs-guide.pdf']
+
+task :fastpdf => [:'ogs-guide.pdf']
+
+task 'ogs-guide.pdf' do |task|
+  pages = File.read('_site/toc.html').scan(/<li><a href=['"]([^'"]+)/).flatten.map { |f| "_site#{f}" }
+  system 'rm', 'prince_errors.log'
+  system 'prince', '--verbose', '--fileroot=_site', '--input=html', '--no-network', '--log=prince_errors.log', '--style=assets/css/print.css', "--output=#{task.name}", *pages # '_site/toc.html',
+  puts `cat prince_errors.log`  
 end # task: pdf
 
 #Load custom rake scripts
