@@ -4,6 +4,8 @@ category : Data Explorer
 tags : [intro, beginner, jekyll, tutorial]
 ---
 
+{% include JB/setup %}
+
 Introduction
 ============
 
@@ -33,12 +35,12 @@ Qt is a library mainly providing functionality for a user interface, i.e. the de
 
 VTK (Visualisation Toolkit) is a graphics library which can be used for the visualisation of objects in 3D. It can also save these 3D objects in files, which in turn are called VTK-files and can also be used by the Data Explorer. The "Render Window" and anything that is displayed there has been constructed using VTK.
 
-[wiki]: https://svn.ufz.de/ogs
+[wiki]:    https://svn.ufz.de/ogs
 
 [jenkins]: https://svn.ufz.de/hudson
 
-[qt]: http://qt.nokia.com
+[qt]:      http://qt.nokia.com
 
-[vtk]: http://www.vtk.org
+[vtk]:     http://www.vtk.org
 
-[gui]: {{ BASE_PATH }}/pics/gui.png
+[gui]:     {{ BASE_PATH }}/pics/gui.png
