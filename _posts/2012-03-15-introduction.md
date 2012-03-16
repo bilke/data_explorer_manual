@@ -41,4 +41,4 @@ VTK (Visualisation Toolkit) is a graphics library which can be used for the visu
 
 [vtk]: http://www.vtk.org
 
-[gui]: /pics/gui.png
+[gui]: {{ BASE_PATH }}/pics/gui.png
