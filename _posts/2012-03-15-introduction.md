@@ -1,6 +1,6 @@
 ---
 layout: post
-category : lessons
+category : Data Explorer
 tags : [intro, beginner, jekyll, tutorial]
 ---
 
@@ -23,15 +23,15 @@ It is also highly recommended to always use the latest version which is always a
 
 In the following a number of terms will appear over and over again and it is important to know what they mean, to be able to follow the instructions.
 
-The following figure shows a screenshot of the GUI of the Data Explorer. The three most important parts of the user interface are marked as “Data View”, “Render Window” and “Visualisation Pipeline”. These elements and the information they contained are explained in detail in section [datavisualisation] and the names will pop up again and again in this manual so it is important that you know what is meant if you read the names.
+The following figure shows a screenshot of the GUI of the Data Explorer. The three most important parts of the user interface are marked as "Data View", "Render Window" and "Visualisation Pipeline". These elements and the information they contained are explained in detail in section datavisualisation and the names will pop up again and again in this manual so it is important that you know what is meant if you read the names.
 
 ![The graphical user interface of the Data Explorer][gui]
 
 OpenGeoSys is a tool that is written in a programming language called C++. As many other programming language it allows the developer to add so called libraries that define a certain set of functionality. This means a programmer does not need to implement every function provided by a programme himself but this function is instead provided by the library and can be used by anyone linking to that library. The Data Explorer makes use of a number of such libraries. The two most important ones are called [Qt][qt] and [VTK][vtk].
 
-Qt is a library mainly providing functionality for a user interface, i.e. the definition of windows, dialogs and everything you expect to see in there, such as buttons, lists, menus, etc. Qt offers a lot more than that but explaining it all would go beyond the scope of this manual. Elements of the Data Explorer that make use of Qt are for instance the “Data View” or the windows displaying diagrams or borehole stratigraphies.
+Qt is a library mainly providing functionality for a user interface, i.e. the definition of windows, dialogs and everything you expect to see in there, such as buttons, lists, menus, etc. Qt offers a lot more than that but explaining it all would go beyond the scope of this manual. Elements of the Data Explorer that make use of Qt are for instance the "Data View" or the windows displaying diagrams or borehole stratigraphies.
 
-VTK (Visualisation Toolkit) is a graphics library which can be used for the visualisation of objects in 3D. It can also save these 3D objects in files, which in turn are called VTK-files and can also be used by the Data Explorer. The “Render Window” and anything that is displayed there has been constructed using VTK.
+VTK (Visualisation Toolkit) is a graphics library which can be used for the visualisation of objects in 3D. It can also save these 3D objects in files, which in turn are called VTK-files and can also be used by the Data Explorer. The "Render Window" and anything that is displayed there has been constructed using VTK.
 
 [wiki]: https://svn.ufz.de/ogs
 
